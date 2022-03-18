@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		1DF4AD7027E51C1C00718D0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD6F27E51C1C00718D0E /* AppDelegate.swift */; };
 		1DF4AD7227E51C1C00718D0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7127E51C1C00718D0E /* SceneDelegate.swift */; };
-		1DF4AD7427E51C1C00718D0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7327E51C1C00718D0E /* ViewController.swift */; };
+		1DF4AD7427E51C1C00718D0E /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */; };
 		1DF4AD7727E51C1C00718D0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7527E51C1C00718D0E /* Main.storyboard */; };
-		1DF4AD7A27E51C1C00718D0E /* WorkoutTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7827E51C1C00718D0E /* WorkoutTracker.xcdatamodeld */; };
 		1DF4AD7C27E51C1E00718D0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7B27E51C1E00718D0E /* Assets.xcassets */; };
 		1DF4AD7F27E51C1E00718D0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7D27E51C1E00718D0E /* LaunchScreen.storyboard */; };
+		1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DF4AD6C27E51C1C00718D0E /* WorkoutTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF4AD6F27E51C1C00718D0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF4AD7127E51C1C00718D0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DF4AD7327E51C1C00718D0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		1DF4AD7627E51C1C00718D0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1DF4AD7927E51C1C00718D0E /* WorkoutTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutTracker.xcdatamodel; sourceTree = "<group>"; };
 		1DF4AD7B27E51C1E00718D0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DF4AD7E27E51C1E00718D0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DF4AD8027E51C1E00718D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DF4AD8A27E5280500718D0E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +60,38 @@
 			children = (
 				1DF4AD6F27E51C1C00718D0E /* AppDelegate.swift */,
 				1DF4AD7127E51C1C00718D0E /* SceneDelegate.swift */,
-				1DF4AD7327E51C1C00718D0E /* ViewController.swift */,
-				1DF4AD7527E51C1C00718D0E /* Main.storyboard */,
+				1DF4AD8827E51D5500718D0E /* Model */,
+				1DF4AD8727E51D3B00718D0E /* Controller */,
+				1DF4AD8627E51D2700718D0E /* View */,
 				1DF4AD7B27E51C1E00718D0E /* Assets.xcassets */,
 				1DF4AD7D27E51C1E00718D0E /* LaunchScreen.storyboard */,
 				1DF4AD8027E51C1E00718D0E /* Info.plist */,
-				1DF4AD7827E51C1C00718D0E /* WorkoutTracker.xcdatamodeld */,
 			);
 			path = WorkoutTracker;
+			sourceTree = "<group>";
+		};
+		1DF4AD8627E51D2700718D0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DF4AD7527E51C1C00718D0E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DF4AD8727E51D3B00718D0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DF4AD8827E51D5500718D0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF4AD7427E51C1C00718D0E /* ViewController.swift in Sources */,
+				1DF4AD7427E51C1C00718D0E /* WorkoutViewController.swift in Sources */,
+				1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */,
 				1DF4AD7027E51C1C00718D0E /* AppDelegate.swift in Sources */,
-				1DF4AD7A27E51C1C00718D0E /* WorkoutTracker.xcdatamodeld in Sources */,
 				1DF4AD7227E51C1C00718D0E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +334,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -338,7 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -366,13 +390,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1DF4AD7827E51C1C00718D0E /* WorkoutTracker.xcdatamodeld */ = {
+		1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1DF4AD7927E51C1C00718D0E /* WorkoutTracker.xcdatamodel */,
+				1DF4AD8A27E5280500718D0E /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 1DF4AD7927E51C1C00718D0E /* WorkoutTracker.xcdatamodel */;
-			path = WorkoutTracker.xcdatamodeld;
+			currentVersion = 1DF4AD8A27E5280500718D0E /* DataModel.xcdatamodel */;
+			name = DataModel.xcdatamodeld;
+			path = ../DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
