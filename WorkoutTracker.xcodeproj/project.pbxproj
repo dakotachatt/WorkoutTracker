@@ -14,6 +14,8 @@
 		1DF4AD7C27E51C1E00718D0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7B27E51C1E00718D0E /* Assets.xcassets */; };
 		1DF4AD7F27E51C1E00718D0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD7D27E51C1E00718D0E /* LaunchScreen.storyboard */; };
 		1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */; };
+		1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */; };
+		1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1DF4AD7E27E51C1E00718D0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DF4AD8027E51C1E00718D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DF4AD8A27E5280500718D0E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */,
+				1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */,
+				1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF4AD7427E51C1C00718D0E /* WorkoutViewController.swift in Sources */,
+				1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */,
 				1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */,
+				1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */,
 				1DF4AD7027E51C1C00718D0E /* AppDelegate.swift in Sources */,
 				1DF4AD7227E51C1C00718D0E /* SceneDelegate.swift in Sources */,
 			);

@@ -34,6 +34,17 @@ class WorkoutViewController: UITableViewController {
     }
     
     //MARK: - TableView Delegate Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToExercise", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ExerciseViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedRoutine = workoutRoutines[indexPath.row]
+        }
+    }
     
     
     //MARK: - Add New Workout Routines
