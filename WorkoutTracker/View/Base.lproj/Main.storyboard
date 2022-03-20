@@ -73,6 +73,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workout Tracker" id="lsz-GP-dQw">
+                        <barButtonItem key="backBarButtonItem" title="Routines" id="Zy7-tp-V9t"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gmU-rk-cfL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -111,7 +112,8 @@
                             <outlet property="delegate" destination="zku-2s-2n9" id="SD7-v6-3rK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZUb-OW-mA4">
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="ZUb-OW-mA4">
+                        <barButtonItem key="backBarButtonItem" title="Exercises" id="fIA-55-xeK"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ONN-ub-3Lq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -120,6 +122,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="exerciseNavBar" destination="ZUb-OW-mA4" id="rEL-LT-yK0"/>
                         <segue destination="j4D-v3-va3" kind="show" identifier="goToExerciseDetails" id="rOH-Hu-6vN"/>
                     </connections>
                 </tableViewController>
@@ -127,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="1109" y="102"/>
         </scene>
-        <!--Exercise Details View Controller-->
+        <!--Create New Exercise-->
         <scene sceneID="qeR-at-HOb">
             <objects>
                 <viewController id="j4D-v3-va3" customClass="ExerciseDetailsViewController" customModule="WorkoutTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,32 +138,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Exercise Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyU-Eq-vqK">
-                                <rect key="frame" x="13" y="107" width="249" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Exercise Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lyU-Eq-vqK">
+                                <rect key="frame" x="111" y="154" width="283" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sets" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KA2-9M-nJZ">
-                                <rect key="frame" x="13" y="161" width="249" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fs-O8-1iO">
-                                <rect key="frame" x="13" y="203" width="249" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CGf-qR-354">
-                                <rect key="frame" x="13" y="245" width="249" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GsL-3q-8nx">
-                                <rect key="frame" x="270" y="109" width="131" height="32"/>
+                                <rect key="frame" x="13" y="106" width="127" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Strength"/>
@@ -171,7 +156,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehT-k7-s4Y">
-                                <rect key="frame" x="13" y="300" width="76" height="38"/>
+                                <rect key="frame" x="13" y="410" width="76" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -180,18 +165,48 @@
                                     <action selector="saveButtonPressed:" destination="j4D-v3-va3" eventType="touchUpInside" id="Oe2-so-EiO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr3-b5-Vf5">
+                                <rect key="frame" x="13" y="154" width="90" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2L-RQ-eLY">
+                                <rect key="frame" x="13" y="227" width="90" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-8q-PYO">
+                                <rect key="frame" x="13" y="319" width="90" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-w0-nv1">
+                                <rect key="frame" x="102" y="297" width="301" height="79"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCH-aU-Wjd">
+                                <rect key="frame" x="102" y="207" width="301" height="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c8O-vX-686"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sJF-ie-NEZ"/>
+                    <navigationItem key="navigationItem" title="Create New Exercise" id="sJF-ie-NEZ"/>
                     <connections>
+                        <outlet property="categoryLabel" destination="bGD-8q-PYO" id="afT-6g-fWB"/>
+                        <outlet property="categoryPicker" destination="y4l-w0-nv1" id="aCf-0Y-XqH"/>
                         <outlet property="exerciseName" destination="lyU-Eq-vqK" id="mXG-pE-lad"/>
-                        <outlet property="repsTimeField" destination="1Fs-O8-1iO" id="dxV-B2-Bf0"/>
                         <outlet property="saveButton" destination="ehT-k7-s4Y" id="ioo-yX-HTq"/>
                         <outlet property="segmentControl" destination="GsL-3q-8nx" id="BRL-Jj-dFg"/>
-                        <outlet property="setsDistanceField" destination="KA2-9M-nJZ" id="r7U-Zj-pxB"/>
-                        <outlet property="weightField" destination="CGf-qR-354" id="H9n-ZQ-AhN"/>
+                        <outlet property="typeLabel" destination="y2L-RQ-eLY" id="Kwb-FB-2GF"/>
+                        <outlet property="typePicker" destination="tCH-aU-Wjd" id="YUZ-ad-ILQ"/>
                         <segue destination="5aG-WM-b3o" kind="unwind" identifier="unwindToExercise" unwindAction="unwindToExerciseWithSegue:" id="cf4-0M-2sK"/>
                     </connections>
                 </viewController>

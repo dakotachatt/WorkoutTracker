@@ -10,6 +10,8 @@ import CoreData
 
 class ExerciseViewController: UITableViewController {
     
+    @IBOutlet weak var exerciseNavBar: UINavigationItem!
+    
     var routineExercises : [Exercise] = []
     var selectedRoutine : Routine? {
         didSet {
@@ -20,6 +22,7 @@ class ExerciseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = selectedRoutine!.name!
         loadExercises()
     }
 

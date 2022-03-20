@@ -11,16 +11,28 @@ class ExerciseDetailsViewController: UIViewController {
 
     @IBOutlet weak var exerciseName: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var setsDistanceField: UITextField!
-    @IBOutlet weak var repsTimeField: UITextField!
-    @IBOutlet weak var weightField: UITextField!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var typePicker: UIPickerView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var selectedRoutine : Routine? = nil
+    var typeSelected : String = ""
+    var categorySelected : String = ""
+    
+    let typePickerOptionsStrength : [String] = ["Bodyweight", "Single Dumb Bell", "Double Dumb Bells", "Bar Bell", "Machine", "Yoga", "Other"]
+    let typePickerOptionsCardio : [String] = ["Indoor Walk", "Indoor Run", "Outdoor Walk", "Outdoor Run", "Elliptical", "Rowing Machine", "Swimming", "Indoor Cycling", "Outdoor Cycling", "Jump Rope", "Video Games"]
+    let categoryPickerOptionsStrength : [String] = ["Full Body", "Chest", "Upper Back", "Lower Back", "Shoulders", "Biceps", "Triceps", "Forearms", "Abdominals", "Glutes", "Thighs", "Calves", "Other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.typePicker.delegate = self
+        self.categoryPicker.delegate = self
+        self.typePicker.dataSource = self
+        self.categoryPicker.dataSource = self
+        
         print(selectedRoutine!.name!)
     }
     
@@ -29,15 +41,15 @@ class ExerciseDetailsViewController: UIViewController {
         switch segmentControl.selectedSegmentIndex {
         //Tag 0 is for strength related workouts
         case 0:
-            setsDistanceField.placeholder = "Sets"
-            repsTimeField.placeholder = "Reps"
-            weightField.isHidden = false
+            categoryLabel.isHidden = false
+            categoryPicker.isHidden = false
+            resetAllExerciseDetailsPickerViews()
             break
         //Tag 1 is for cardio related workouts
         case 1:
-            setsDistanceField.placeholder = "Distance"
-            repsTimeField.placeholder = "Time"
-            weightField.isHidden = true
+            categoryLabel.isHidden = true
+            categoryPicker.isHidden = true
+            resetAllExerciseDetailsPickerViews()
             break
         default:
             break
@@ -56,8 +68,24 @@ class ExerciseDetailsViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         } else {
+            newExercise.umbrellaType = segmentControl.titleForSegment(at: segmentControl.selectedSegmentIndex)
             newExercise.name = exerciseName.text!
-            newExercise.type = segmentControl.titleForSegment(at: segmentControl.selectedSegmentIndex)
+            newExercise.type = typeSelected
+            
+            switch segmentControl.selectedSegmentIndex {
+            //Tag 0 is for strength related workouts
+            case 0:
+                newExercise.category = categorySelected
+                break
+            //Tag 1 is for cardio related workouts
+            case 1:
+                newExercise.category = "Cardio"
+                break
+            default:
+                print("Error occurred with category assignment")
+                break
+            }
+            
             newExercise.parentRoutine = self.selectedRoutine
             
             self.saveExercise()
@@ -71,6 +99,80 @@ class ExerciseDetailsViewController: UIViewController {
             try context.save()
         } catch {
             print("Error saving exercise: \(error)")
+        }
+    }
+}
+
+//MARK: - Picker View Methods
+extension ExerciseDetailsViewController: UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (pickerView.tag == 0) {
+            switch segmentControl.selectedSegmentIndex {
+            //Tag 0 is for strength related workouts
+            case 0:
+                return typePickerOptionsStrength.count
+            //Tag 1 is for cardio related workouts
+            case 1:
+                return typePickerOptionsCardio.count
+            default:
+                return 0
+            }
+        } else if (pickerView.tag == 1) {
+            return categoryPickerOptionsStrength.count
+        }
+        
+        return 0
+    }
+    
+    func resetAllExerciseDetailsPickerViews() {
+        typePicker.reloadAllComponents()
+        categoryPicker.reloadAllComponents()
+        typePicker.selectRow(0, inComponent: 0, animated: false)
+        categoryPicker.selectRow(0, inComponent: 0, animated: false)
+    }
+}
+
+extension ExerciseDetailsViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView.tag == 0) {
+            switch segmentControl.selectedSegmentIndex {
+            //Tag 0 is for strength related workouts
+            case 0:
+                return self.typePickerOptionsStrength[row]
+            //Tag 1 is for cardio related workouts
+            case 1:
+                return self.typePickerOptionsCardio[row]
+            default:
+                return "Could not Retrieve"
+            }
+        } else if (pickerView.tag == 1) {
+            return self.categoryPickerOptionsStrength[row]
+        }
+        
+        return "Could not Retrieve"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView.tag == 0) {
+            switch segmentControl.selectedSegmentIndex {
+            //Tag 0 is for strength related workouts
+            case 0:
+                typeSelected = self.typePickerOptionsStrength[row]
+                break
+            //Tag 1 is for cardio related workouts
+            case 1:
+                typeSelected = self.typePickerOptionsCardio[row]
+                break
+            default:
+                break
+            }
+        } else if (pickerView.tag == 1) {
+            categorySelected = self.categoryPickerOptionsStrength[row]
         }
     }
 }

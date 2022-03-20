@@ -16,6 +16,7 @@
 		1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */; };
 		1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */; };
 		1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */; };
+		1DF4AD9327E7C11000718D0E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD9227E7C11000718D0E /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1DF4AD8A27E5280500718D0E /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
+		1DF4AD9227E7C11000718D0E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1DF4AD8927E5280500718D0E /* DataModel.xcdatamodeld */,
+				1DF4AD9227E7C11000718D0E /* K.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF4AD7427E51C1C00718D0E /* WorkoutViewController.swift in Sources */,
+				1DF4AD9327E7C11000718D0E /* K.swift in Sources */,
 				1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */,
 				1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */,
 				1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */,
