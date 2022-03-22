@@ -9,6 +9,7 @@ import UIKit
 
 class ExerciseDetailsViewController: UIViewController {
 
+    @IBOutlet weak var exerciseNameLabel: UILabel!
     @IBOutlet weak var exerciseName: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var typeLabel: UILabel!
@@ -16,6 +17,10 @@ class ExerciseDetailsViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet var nameLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var typeLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var cardioTypeWidthConstraint: NSLayoutConstraint!
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var selectedRoutine : Routine? = nil
@@ -33,22 +38,29 @@ class ExerciseDetailsViewController: UIViewController {
         self.typePicker.dataSource = self
         self.categoryPicker.dataSource = self
         
-        print(selectedRoutine!.name!)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.selected)
     }
     
     //MARK: - View Field Placeholder Methods
     @IBAction func segmentControlToggled(_ sender: UISegmentedControl) {
+        
         switch segmentControl.selectedSegmentIndex {
         //Tag 0 is for strength related workouts
         case 0:
             categoryLabel.isHidden = false
             categoryPicker.isHidden = false
+            nameLabelWidthConstraint.isActive = true
+            typeLabelWidthConstraint.isActive = true
+            cardioTypeWidthConstraint.isActive = false
             resetAllExerciseDetailsPickerViews()
             break
         //Tag 1 is for cardio related workouts
         case 1:
             categoryLabel.isHidden = true
             categoryPicker.isHidden = true
+            nameLabelWidthConstraint.isActive = false
+            typeLabelWidthConstraint.isActive = false
+            cardioTypeWidthConstraint.isActive = true
             resetAllExerciseDetailsPickerViews()
             break
         default:

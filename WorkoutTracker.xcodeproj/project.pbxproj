@@ -79,6 +79,7 @@
 		1DF4AD8627E51D2700718D0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */,
 				1DF4AD7527E51C1C00718D0E /* Main.storyboard */,
 			);
 			path = View;
@@ -89,7 +90,6 @@
 			children = (
 				1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */,
 				1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */,
-				1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
