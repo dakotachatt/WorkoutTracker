@@ -17,9 +17,11 @@ class ExerciseDetailsViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet var nameLabelWidthConstraint: NSLayoutConstraint!
-    @IBOutlet var typeLabelWidthConstraint: NSLayoutConstraint!
-    @IBOutlet var cardioTypeWidthConstraint: NSLayoutConstraint!
+    
+    //Constraints - Used to format width of each label based on size of largest label available in the view
+    @IBOutlet var nameLabelWidthConstraint: NSLayoutConstraint! //When Strength is selected, name label width is matched to width of category label
+    @IBOutlet var typeLabelWidthConstraint: NSLayoutConstraint! //When Strength is selected, type label width is matched to width of category label
+    @IBOutlet var cardioTypeWidthConstraint: NSLayoutConstraint! //When cardio is selected, category label is hidden, and type label width is matched to width of name label
     
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

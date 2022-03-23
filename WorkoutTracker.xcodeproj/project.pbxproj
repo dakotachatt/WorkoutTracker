@@ -17,6 +17,9 @@
 		1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */; };
 		1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */; };
 		1DF4AD9327E7C11000718D0E /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD9227E7C11000718D0E /* K.swift */; };
+		1DF4AD9527EA780500718D0E /* StrengthExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD9427EA780500718D0E /* StrengthExerciseDetailsViewController.swift */; };
+		1DF4AD9827EBB12F00718D0E /* ExerciseSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4AD9627EBB12F00718D0E /* ExerciseSetCell.swift */; };
+		1DF4AD9927EBB12F00718D0E /* ExerciseSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DF4AD9727EBB12F00718D0E /* ExerciseSetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		1DF4AD9227E7C11000718D0E /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		1DF4AD9427EA780500718D0E /* StrengthExerciseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthExerciseDetailsViewController.swift; sourceTree = "<group>"; };
+		1DF4AD9627EBB12F00718D0E /* ExerciseSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSetCell.swift; sourceTree = "<group>"; };
+		1DF4AD9727EBB12F00718D0E /* ExerciseSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseSetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +85,9 @@
 		1DF4AD8627E51D2700718D0E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */,
 				1DF4AD7527E51C1C00718D0E /* Main.storyboard */,
+				1DF4AD9627EBB12F00718D0E /* ExerciseSetCell.swift */,
+				1DF4AD9727EBB12F00718D0E /* ExerciseSetCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +97,8 @@
 			children = (
 				1DF4AD7327E51C1C00718D0E /* WorkoutViewController.swift */,
 				1DF4AD8C27E663A000718D0E /* ExerciseViewController.swift */,
+				1DF4AD8E27E671B100718D0E /* ExerciseDetailsViewController.swift */,
+				1DF4AD9427EA780500718D0E /* StrengthExerciseDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF4AD9927EBB12F00718D0E /* ExerciseSetCell.xib in Resources */,
 				1DF4AD7F27E51C1E00718D0E /* LaunchScreen.storyboard in Resources */,
 				1DF4AD7C27E51C1E00718D0E /* Assets.xcassets in Resources */,
 				1DF4AD7727E51C1C00718D0E /* Main.storyboard in Resources */,
@@ -176,6 +186,8 @@
 			files = (
 				1DF4AD7427E51C1C00718D0E /* WorkoutViewController.swift in Sources */,
 				1DF4AD9327E7C11000718D0E /* K.swift in Sources */,
+				1DF4AD9527EA780500718D0E /* StrengthExerciseDetailsViewController.swift in Sources */,
+				1DF4AD9827EBB12F00718D0E /* ExerciseSetCell.swift in Sources */,
 				1DF4AD8D27E663A000718D0E /* ExerciseViewController.swift in Sources */,
 				1DF4AD8B27E5280500718D0E /* DataModel.xcdatamodeld in Sources */,
 				1DF4AD8F27E671B100718D0E /* ExerciseDetailsViewController.swift in Sources */,
@@ -335,8 +347,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,8 +376,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

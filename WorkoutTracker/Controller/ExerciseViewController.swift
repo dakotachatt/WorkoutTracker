@@ -40,14 +40,27 @@ class ExerciseViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToStrengthExerciseDetails", sender: self)
+    }
+    
     //MARK: - Delegate Methods
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goToExerciseDetails", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! ExerciseDetailsViewController
-        destinationVC.selectedRoutine = selectedRoutine
+        if(segue.identifier == "goToExerciseDetails") {
+            let destinationVC = segue.destination as! ExerciseDetailsViewController
+            destinationVC.selectedRoutine = selectedRoutine
+            
+        } else if(segue.identifier == "goToStrengthExerciseDetails") {
+            let destinationVC = segue.destination as! StrengthExerciseDetailsViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.selectedExercise = routineExercises[indexPath.row]
+            }
+        }
     }
     
     @IBAction func unwindToExercise(segue: UIStoryboardSegue) {
