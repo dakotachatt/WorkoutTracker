@@ -19,17 +19,22 @@ class StrengthExerciseDetailsViewController: UIViewController {
     }
     
     @IBOutlet weak var setDetailsTableView: UITableView!
-    @IBOutlet weak var exerciseNotesTextField: UITextView!
+    @IBOutlet weak var exerciseCommentTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Data sources
         setDetailsTableView.dataSource = self
+        
+        //Delegates
+        self.exerciseCommentTextField.delegate = self
+        
+        //View Appearance
         self.title = selectedExercise!.name!
         setDetailsTableView.register(UINib(nibName: "ExerciseSetCell", bundle: nil), forCellReuseIdentifier: "setDetailsCell")
-//        self.hideKeyboardTapOutside()
-        exerciseNotesTextField.layer.borderWidth = 0.5
-        exerciseNotesTextField.layer.borderColor = UIColor.gray.cgColor
-        exerciseNotesTextField.layer.cornerRadius = 5.0
+        self.hideKeyboardTapOutside()
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -53,15 +58,20 @@ extension StrengthExerciseDetailsViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - Keyboard hiding methods
-//extension UIViewController {
-//    func hideKeyboardTapOutside() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard()))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
+//MARK: - Keyboard dismissing methods
+extension StrengthExerciseDetailsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func hideKeyboardTapOutside() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

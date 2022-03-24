@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-pI-z1z">
-                                <rect key="frame" x="10" y="101" width="408" height="545"/>
+                                <rect key="frame" x="10" y="101" width="408" height="521"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-vH-lKN" userLabel="Set Details Header">
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="35"/>
@@ -175,8 +175,13 @@
                                             <constraint firstAttribute="height" constant="300" id="Syy-MS-N09"/>
                                         </constraints>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-ae-00N" userLabel="Notes Label">
-                                        <rect key="frame" x="0.0" y="355" width="408" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-JQ-gXV">
+                                        <rect key="frame" x="0.0" y="355" width="108" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add New Set"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-ae-00N" userLabel="Notes Label">
+                                        <rect key="frame" x="0.0" y="396" width="408" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="lvy-GD-h1A"/>
                                         </constraints>
@@ -184,35 +189,35 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blz-l2-W55" userLabel="Exercise Notes">
-                                        <rect key="frame" x="0.0" y="400" width="408" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="imY-Os-rwA">
+                                        <rect key="frame" x="0.0" y="441" width="408" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="ANV-dR-Ynv"/>
+                                            <constraint firstAttribute="height" constant="35" id="mEq-E4-ZWA"/>
                                         </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="continue"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd6-oW-hQ8">
-                                        <rect key="frame" x="0.0" y="510" width="408" height="35"/>
+                                        <rect key="frame" x="0.0" y="486" width="408" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="eJ2-Gg-vwj"/>
                                         </constraints>
                                         <color key="tintColor" red="0.55888342859999995" green="0.16162440180000001" blue="0.14507463570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save">
+                                            <color key="baseBackgroundColor" red="0.55888342859999995" green="0.16162440180000001" blue="0.14507463570000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="saveButtonPressed:" destination="POn-ef-FWk" eventType="touchUpInside" id="6np-rc-eOH"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="imY-Os-rwA" secondAttribute="trailing" id="THz-1h-vXK"/>
                                     <constraint firstItem="jB7-ae-00N" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="US6-Te-pZr"/>
-                                    <constraint firstItem="Blz-l2-W55" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="YKI-Xo-8nP"/>
                                     <constraint firstAttribute="trailing" secondItem="jd6-oW-hQ8" secondAttribute="trailing" id="ci3-U8-atJ"/>
                                     <constraint firstItem="mEM-vH-lKN" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="iq2-1g-BcJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Blz-l2-W55" secondAttribute="trailing" id="orZ-KP-Sug"/>
+                                    <constraint firstItem="imY-Os-rwA" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="pXz-iy-kST"/>
                                     <constraint firstItem="t07-LR-eN3" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="rKw-3I-f9n"/>
                                     <constraint firstItem="jd6-oW-hQ8" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="rl0-6G-fJQ"/>
                                     <constraint firstAttribute="trailing" secondItem="jB7-ae-00N" secondAttribute="trailing" id="sNb-7A-G7P"/>
@@ -231,7 +236,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oAC-nx-lsR"/>
                     <connections>
-                        <outlet property="exerciseNotesTextField" destination="Blz-l2-W55" id="TU9-ka-sUE"/>
+                        <outlet property="exerciseCommentTextField" destination="imY-Os-rwA" id="p5f-Hm-lQB"/>
                         <outlet property="setDetailsTableView" destination="t07-LR-eN3" id="WEi-DZ-OSn"/>
                     </connections>
                 </viewController>
@@ -372,9 +377,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
