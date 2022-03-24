@@ -103,7 +103,6 @@ class ExerciseDetailsViewController: UIViewController {
             newExercise.parentRoutine = self.selectedRoutine
             
             self.saveExercise()
-            self.performSegue(withIdentifier: "unwindToExercise", sender: self)
         }
     }
     
@@ -111,6 +110,7 @@ class ExerciseDetailsViewController: UIViewController {
     func saveExercise() {
         do {
             try context.save()
+            self.performSegue(withIdentifier: "unwindToExercise", sender: self)
         } catch {
             print("Error saving exercise: \(error)")
         }

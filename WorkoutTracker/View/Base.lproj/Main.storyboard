@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-pI-z1z">
-                                <rect key="frame" x="10" y="101" width="408" height="521"/>
+                                <rect key="frame" x="10" y="101" width="408" height="791"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-vH-lKN" userLabel="Set Details Header">
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="35"/>
@@ -168,20 +168,33 @@
                                             <constraint firstAttribute="height" constant="35" id="iOZ-bd-FvV"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t07-LR-eN3" userLabel="Set Details">
-                                        <rect key="frame" x="0.0" y="45" width="408" height="300"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wG1-34-S8d">
+                                        <rect key="frame" x="0.0" y="45" width="408" height="611"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t07-LR-eN3" userLabel="Set Details">
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="611"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VBJ-JQ-gXV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="408" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Add New Set"/>
+                                                    <connections>
+                                                        <action selector="addSetButtonPressed:" destination="POn-ef-FWk" eventType="touchUpInside" id="sko-ZQ-RnY"/>
+                                                    </connections>
+                                                </button>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="Syy-MS-N09"/>
+                                            <constraint firstAttribute="bottom" secondItem="t07-LR-eN3" secondAttribute="bottom" id="RZK-WT-eYE"/>
+                                            <constraint firstItem="t07-LR-eN3" firstAttribute="leading" secondItem="wG1-34-S8d" secondAttribute="leading" id="iTC-za-QAb"/>
+                                            <constraint firstItem="t07-LR-eN3" firstAttribute="top" secondItem="wG1-34-S8d" secondAttribute="top" id="kyf-m7-NQR"/>
+                                            <constraint firstAttribute="trailing" secondItem="t07-LR-eN3" secondAttribute="trailing" id="rYx-54-PtQ"/>
                                         </constraints>
-                                    </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBJ-JQ-gXV">
-                                        <rect key="frame" x="0.0" y="355" width="108" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Add New Set"/>
-                                    </button>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB7-ae-00N" userLabel="Notes Label">
-                                        <rect key="frame" x="0.0" y="396" width="408" height="35"/>
+                                        <rect key="frame" x="0.0" y="666" width="408" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="lvy-GD-h1A"/>
                                         </constraints>
@@ -190,7 +203,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="imY-Os-rwA">
-                                        <rect key="frame" x="0.0" y="441" width="408" height="35"/>
+                                        <rect key="frame" x="0.0" y="711" width="408" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="mEq-E4-ZWA"/>
                                         </constraints>
@@ -198,7 +211,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="continue"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd6-oW-hQ8">
-                                        <rect key="frame" x="0.0" y="486" width="408" height="35"/>
+                                        <rect key="frame" x="0.0" y="756" width="408" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="eJ2-Gg-vwj"/>
                                         </constraints>
@@ -215,13 +228,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="imY-Os-rwA" secondAttribute="trailing" id="THz-1h-vXK"/>
                                     <constraint firstItem="jB7-ae-00N" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="US6-Te-pZr"/>
+                                    <constraint firstItem="wG1-34-S8d" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="aS9-kk-cn2"/>
                                     <constraint firstAttribute="trailing" secondItem="jd6-oW-hQ8" secondAttribute="trailing" id="ci3-U8-atJ"/>
                                     <constraint firstItem="mEM-vH-lKN" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="iq2-1g-BcJ"/>
                                     <constraint firstItem="imY-Os-rwA" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="pXz-iy-kST"/>
-                                    <constraint firstItem="t07-LR-eN3" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="rKw-3I-f9n"/>
+                                    <constraint firstAttribute="trailing" secondItem="wG1-34-S8d" secondAttribute="trailing" id="qkS-Qo-s5B"/>
                                     <constraint firstItem="jd6-oW-hQ8" firstAttribute="leading" secondItem="ARM-pI-z1z" secondAttribute="leading" id="rl0-6G-fJQ"/>
                                     <constraint firstAttribute="trailing" secondItem="jB7-ae-00N" secondAttribute="trailing" id="sNb-7A-G7P"/>
-                                    <constraint firstAttribute="trailing" secondItem="t07-LR-eN3" secondAttribute="trailing" id="vvE-bd-PGD"/>
                                     <constraint firstAttribute="trailing" secondItem="mEM-vH-lKN" secondAttribute="trailing" id="wmc-gt-wXl"/>
                                 </constraints>
                             </stackView>
@@ -231,6 +244,7 @@
                         <constraints>
                             <constraint firstItem="ZdA-9v-x0X" firstAttribute="trailing" secondItem="ARM-pI-z1z" secondAttribute="trailing" constant="10" id="Dvv-NO-Ddy"/>
                             <constraint firstItem="ARM-pI-z1z" firstAttribute="top" secondItem="ZdA-9v-x0X" secondAttribute="top" constant="13" id="F3o-7e-KIe"/>
+                            <constraint firstItem="ZdA-9v-x0X" firstAttribute="bottom" secondItem="ARM-pI-z1z" secondAttribute="bottom" id="Xgm-op-s0T"/>
                             <constraint firstItem="ARM-pI-z1z" firstAttribute="leading" secondItem="ZdA-9v-x0X" secondAttribute="leading" constant="10" id="bEB-nt-JpX"/>
                         </constraints>
                     </view>
@@ -238,9 +252,11 @@
                     <connections>
                         <outlet property="exerciseCommentTextField" destination="imY-Os-rwA" id="p5f-Hm-lQB"/>
                         <outlet property="setDetailsTableView" destination="t07-LR-eN3" id="WEi-DZ-OSn"/>
+                        <segue destination="MmN-6L-5oH" kind="unwind" identifier="unwindToExercise" unwindAction="unwindToExerciseWithSegue:" id="QsM-xy-HdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6y-C6-yzI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MmN-6L-5oH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1983.6448598130839" y="-289.63282937365011"/>
         </scene>

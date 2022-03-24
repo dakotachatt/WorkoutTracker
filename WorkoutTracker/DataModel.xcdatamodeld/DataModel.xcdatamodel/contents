@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G417" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exercise" representedClassName=".Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="category" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="umbrellaType" attributeType="String"/>
+        <relationship name="exerciseSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StrengthExerciseSet" inverseName="parentExercise" inverseEntity="StrengthExerciseSet"/>
+        <relationship name="parentRoutine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Routine" inverseName="exercises" inverseEntity="Routine"/>
+    </entity>
+    <entity name="Routine" representedClassName=".Routine" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="parentRoutine" inverseEntity="Exercise"/>
+    </entity>
+    <entity name="StrengthExerciseSet" representedClassName=".StrengthExerciseSet" syncable="YES" codeGenerationType="class">
+        <attribute name="reps" attributeType="Integer 16" defaultValueString="8" usesScalarValueType="YES"/>
+        <attribute name="setNum" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseSets" inverseEntity="Exercise"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="-81.5020751953125" positionY="9" width="116.602294921875" height="73"/>
+        <element name="Exercise" positionX="124.2786865234375" positionY="5.982330322265625" width="128" height="133"/>
+        <element name="StrengthExerciseSet" positionX="315.0509033203125" positionY="6.250244140625" width="128" height="103"/>
+    </elements>
+</model>
